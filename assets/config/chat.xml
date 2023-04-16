@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chat>
+  <!-- Welcome message -->
+  <message id="welcome">
+    <content>
+      <![CDATA[
+        <p>Welcome to MacroMonos!</p>
+        <p>Chat with other players, explore the virtual world, and have fun!</p>
+      ]]>
+    </content>
+  </message>
+
+  <!-- General chat message -->
+  <message id="general">
+    <content>
+      <![CDATA[
+        <p><b>[{{username}}]:</b> {{message}}</p>
+      ]]>
+    </content>
+  </message>
+
+  <!-- System message -->
+  <message id="system">
+    <content>
+      <![CDATA[
+        <p><b>System:</b> {{message}}</p>
+      ]]>
+    </content>
+  </message>
+
+  <!-- Emote message -->
+  <message id="emote">
+    <content>
+      <![CDATA[
+        <p><b>[{{username}}]:</b> {{emote}}</p>
+      ]]>
+    </content>
+  </message>
+
+  <!-- Command message -->
+  <message id="command">
+    <content>
+      <![CDATA[
+        <p><b>[{{username}}]:</b> {{command}}</p>
+      ]]>
+    </content>
+  </message>
+
+  <!-- Error message -->
+  <message id="error">
+    <content>
+      <![CDATA[
+        <p><b>Error:</b> {{error}}</p>
+      ]]>
+    </content>
+  </message>
+</chat>

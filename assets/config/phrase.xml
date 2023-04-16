@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phrases>
+  <!-- List of phrases to be used in chat -->
+  <phrase id="greeting">
+    <content>
+      <![CDATA[
+        <p>Hey there, {{username}}! How are you today?</p>
+      ]]>
+    </content>
+  </phrase>
+  <phrase id="farewell">
+    <content>
+      <![CDATA[
+        <p>Goodbye, {{username}}! Have a great day!</p>
+      ]]>
+    </content>
+  </phrase>
+  <!-- Add more phrases as needed -->
+</phrases>
