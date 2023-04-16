@@ -1,0 +1,60 @@
+<validation>
+  <rule>
+    <field>username</field>
+    <required>true</required>
+    <minLength>3</minLength>
+    <maxLength>20</maxLength>
+    <regex>^[a-zA-Z0-9_]+$</regex>
+    <errorMessage>Username is required and must be between 3 and 20 characters, consisting of only letters, numbers, and underscores.</errorMessage>
+  </rule>
+  <rule>
+    <field>password</field>
+    <required>true</required>
+    <minLength>6</minLength>
+    <maxLength>20</maxLength>
+    <regex>^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+$</regex>
+    <errorMessage>Password is required and must be between 6 and 20 characters, consisting of at least one uppercase letter, one lowercase letter, and one number.</errorMessage>
+  </rule>
+  <rule>
+    <field>email</field>
+    <required>true</required>
+    <regex>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</regex>
+    <errorMessage>Please enter a valid email address.</errorMessage>
+  </rule>
+
+
+  <!--EMAIL VALIDATIONS-->
+  <rule>
+    <field>email_verify</field>
+    <required>true</required>
+    <equalTo>email</equalTo>
+    <errorMessage>Email verification must match the provided email address.</errorMessage>
+  </rule>
+
+  <!-- Plain Validator Syntax -->
+<validators>
+    <validator type="email">
+        <param name="fieldName">myEmail</param>
+        <message>Must provide a valid email</message>
+    </validator>
+</validators>
+ 
+<!-- Field Validator Syntax -->
+<field name="myEmail">
+   <field-validator type="email">
+      <message>Must provide a valid email</message>
+   </field-validator>
+</field>
+ 
+<!-- Field Validator Syntax with expressions -->
+<!-- Only available when used with xml based configuration, if you want to have the same
+        flexibility with annotations use @RegexFieldValidator instead -->
+<field name="myEmail">
+   <field-validator type="email">
+      <param name="regexExpression">${emailPattern}</param> <!-- will be evaluated as: String getEmailPattern() -->
+      <param name="caseSensitiveExpression">${emailCaseSensitive}</param> <!-- will be evaluated as: boolean getEmailCaseSensitive() -->
+      <param name="trimExpression">${trimEmail}</param> <!-- will be evaluated as: boolean getTrimEmail() -->
+      <message>Must provide a valid email</message>
+   </field-validator>
+</field>
+</validation>
